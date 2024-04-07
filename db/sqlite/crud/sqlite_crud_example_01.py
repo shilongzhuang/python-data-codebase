@@ -129,4 +129,9 @@ cursor.close()
 # Close the connection
 conn.close()
 
-os.remove(db_name)
+if os.path.exists(db_name):
+    print("The database exists.")
+    os.remove(db_name)
+    print("The database is deleted.")
+else:
+    print("The database does not exist.")
