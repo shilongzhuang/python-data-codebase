@@ -8,6 +8,13 @@ SQLITE_DB_EXTENSION = '.db'
 
 
 def build_sqlite_db_path(default_db_name='default', default_path=None):
+    """
+    Function to build path for sqlite database
+    Parameters:
+        default_db_name (str): SQLite database name
+        default_path (str): SQLite default path dir
+    Returns: sqlite db path
+    """
     if default_path is None:
         default_path = os.getenv(SQLITE_DIR_ENV_NAME)
         if default_path is None:
@@ -21,6 +28,13 @@ def build_sqlite_db_path(default_db_name='default', default_path=None):
 
 
 def create_sqlite_connection(name='default', path=None):
+    """
+    Function to create sqlite database
+    Parameters:
+        name (str): SQLite database name by default it is default
+        path (str): SQLite default path dir
+    Returns: connection (sqlite3.Connection): SQLite connection
+    """
     db_path = build_sqlite_db_path(name, path)
     sqlite_connection = None
     try:
