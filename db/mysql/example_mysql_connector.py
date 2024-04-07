@@ -35,9 +35,9 @@ conn = mysql.connector.connect(**mysql_config)
 
 try:
     with conn.cursor() as cursor:
-        # Define the SQL query
+        # Define the sql query
         query = "SELECT * FROM users;"
-        # Execute the SQL query
+        # Execute the sql query
         cursor.execute(query)
         # Fetch all rows from the last executed query
         results = cursor.fetchall()
