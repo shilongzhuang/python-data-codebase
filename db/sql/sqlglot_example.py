@@ -6,7 +6,7 @@ tokenizer = Tokenizer()
 sql = "/* comment*/ SELEct column1, column2 FROM table WHERE condition = 1"
 try:
     sqlglot.transpile(sql)
-    print("Valid SQL")
+    print("Valid SQL!")
 except sqlglot.errors.ParseError as e:
     print(e.errors)
 
@@ -19,7 +19,7 @@ for token in tokens:
 sql = "/* comment*/ SELET column1, column2 FROM table WHERE condition = 1"
 try:
     sqlglot.transpile(sql)
-    print("Valid SQL")
+    print("Valid SQL!")
 except sqlglot.errors.ParseError as e:
     print(e.errors)
 
