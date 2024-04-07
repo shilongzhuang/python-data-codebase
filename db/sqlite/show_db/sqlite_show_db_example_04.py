@@ -8,9 +8,10 @@ SQLITE_DB_EXTENSION = '.db'
 
 
 def build_sqlite_db_path(default_db_name='default', default_path=None):
-    default_path = os.getenv(SQLITE_DIR_ENV_NAME)
     if default_path is None:
-        default_path = ''
+        default_path = os.getenv(SQLITE_DIR_ENV_NAME)
+        if default_path is None:
+            default_path = ''
         # raise ValueError("Environment variable 'DB_DIRECTORY' not set.")
     # Build the full path based on the database file and default path
     if SQLITE_DB_EXTENSION not in default_db_name.lower():
